@@ -84,7 +84,8 @@ if [ ! -f /usr/bin/p ]; then
 fi
 
 if [ ! -f /usr/bin/psh ]; then
-    echo "proxychains bash" > /usr/bin/psh
+    #echo "proxychains bash --rcfile <(cat ~/.bashrc; echo 'PS1="(p)$PS1"')" > /usr/bin/psh
+    echo 'proxychains bash --rcfile <(cat ~/.bashrc; echo PS1='"'"'(p)$PS1'"')" > /usr/bin/psh
     sudo chmod u+x /usr/bin/psh
 fi
 
