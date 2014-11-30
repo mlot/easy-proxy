@@ -1,18 +1,18 @@
 #! /bin/bash                                                                                       
-
-# Copyright (c) Microsoft Open Technologies, Inc. All rights reserved.
+############################################################################################
+#
+# Copyright (c) 2014 Liu Ming (mlot@github.com)
 # Licensed under the Apache License, Version 2.0 (the "License"); 
 # you may not use these files except in compliance with the License. 
 # You may obtain a copy of the License at
-
+#
 # http://www.apache.org/licenses/LICENSE-2.0
-
+#
 # Unless required by applicable law or agreed to in writing, 
 # software distributed under the License is distributed on an "AS IS" BASIS, 
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
 # See the License for the specific language governing permissions and limitations under the License.
-
-# Author: Liu Ming(mingli@microsoft.com)
+#
 # Description: A handly script to setup a whole ssh tunnel proxy environment
 # Version: v0.9
 # Last Updated: 2014-11-30
@@ -25,7 +25,7 @@
 #       p apt-get install docker.io
 #       p wget www.facebook.com
 #    * psh, run bash in  proxy mode 
-
+############################################################################################
  
 LOCAL_PROXY_IP=127.0.0.1
 LOCAL_PROXY_PORT=7071                                                                              
@@ -42,8 +42,6 @@ function login_failed() {
     echo "Failed to login to the proxy server."
     exit 1
 }
-
-
 
 ######### Main logic ##########
  
