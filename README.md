@@ -8,6 +8,6 @@ A Bash script to setup autossh proxy environment for debian serias, combine ssh,
    this shell is re-runable if current environment is corrupted.
 2. Run through proxy:
   * p COMMAND, e.g.
-     `p apt-get install docker.io`
-     `p wget www.facebook.com`
+     * `p apt-get install docker.io`
+     * `p wget www.facebook.com`
   * psh, run bash in  proxy mode
