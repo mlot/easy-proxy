@@ -1,7 +1,9 @@
 # easy-proxy #
 ==========
 
-A Bash script to setup autossh proxy environment for debian serias, combine ssh, autossh and proxychains.
+A handy script to setup a proxy environment to redirect all your application traffic to another sshd enabled server.
+combined with ssh, autossh and proxychains, very simple to use, no configuration needed.
+
 
 ## Usage: ##
 1. Setup the proxy environment: 
