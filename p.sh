@@ -1,4 +1,5 @@
-#! /bin/bash                                                                                       
+#! /bin/bash
+
 ############################################################################################
 #
 # Copyright (c) 2014 Liu Ming (mlot@github.com)
@@ -25,7 +26,9 @@
 #       p apt-get install docker.io
 #       p wget www.facebook.com
 #    * psh, run bash in  proxy mode 
+#
 ############################################################################################
+ 
  
 LOCAL_PROXY_IP=127.0.0.1
 LOCAL_PROXY_PORT=7071                                                                              
@@ -65,7 +68,6 @@ if [ $? -ne 0 ]; then
         echo "failed"
         login_failed
     fi
-
 fi
 
 echo
@@ -80,6 +82,7 @@ sudo sed -i "s/socks4\s\s127.0.0.1\s9050/socks5 $LOCAL_PROXY_IP $LOCAL_PROXY_POR
 if [ ! -f /usr/bin/p ]; then
     sudo ln -s /usr/bin/proxychains /usr/bin/p                                                         
 fi
+
 if [ ! -f /usr/bin/psh ]; then
     echo "proxychains bash" > /usr/bin/psh
     sudo chmod u+x /usr/bin/psh
@@ -94,4 +97,4 @@ echo "for example: p apt-get install mysql"
 echo
 echo "You can also config socks5 proxy in your apps with: socks5://$LOCAL_PROXY_IP:$LOCAL_PROXY_PORT"
 echo "============================================================================================="
-
+echo
