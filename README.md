@@ -14,7 +14,7 @@ combined with ssh, autossh and proxychains, very simple to use, no configuration
       * build ssh tunnel with -D option to setup a local socks5 server
       * add autossh daemon to supervise this ssh tunnel, rebuild connection when it breaks
       * config proxychains, point the proxy provider to the tunnel built above
-      * add p and psh command to simplify proxychains usage
+      * add p and psh short commands to simplify usage
    * this shell is re-runable if current environment is corrupted.
 2. Run through proxy:
   * p COMMAND, e.g.
