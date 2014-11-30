@@ -18,4 +18,6 @@ A Bash script to setup autossh proxy environment for debian serias, combine ssh,
   * p COMMAND, e.g.
      * `p apt-get install docker.io`
      * `p wget www.facebook.com`
-  * psh, run bash in  proxy mode
+     * `p git clone https://github.com/mlot/easy-proxy.git`
+  * or use 'psh', to run a shell all in proxy environment
+      * `psh`
