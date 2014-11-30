@@ -90,11 +90,14 @@ fi
 
 echo
 echo "============================================================================================="
-echo "Proxy server setup successfully!"
-echo "Put 'p' in front of your command to redirect all network traffic to:"${proxy_server}
+echo "Proxy enviroment has been setup successfully, you can use it in 3 ways:"
+echo "1. prepend 'p' to your command, redirecting all network traffic to:$proxy_server, like:"
+echo '    $p apt-get install mysql'
+echo '    $p git clone https://github.com/mlot/easy-proxy.git'
 echo 
-echo "for example: p apt-get install mysql"
+echo "2. start a bash in proxy mode, by issue:"
+echo '    $psh'
 echo
-echo "You can also config socks5 proxy in your apps with: socks5://$LOCAL_PROXY_IP:$LOCAL_PROXY_PORT"
+echo "3. Config socks5 proxy in your apps with: socks5://$LOCAL_PROXY_IP:$LOCAL_PROXY_PORT"
 echo "============================================================================================="
 echo
