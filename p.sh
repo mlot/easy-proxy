@@ -78,6 +78,7 @@ echo 'Start autossh daemon...'
 autossh -Nf -i $identity_file -D $LOCAL_PROXY_IP:$LOCAL_PROXY_PORT ${proxy_user}@${proxy_server}         
 
 sudo sed -i "s/socks4\s\s127.0.0.1\s9050/socks5 $LOCAL_PROXY_IP $LOCAL_PROXY_PORT/" /etc/proxychains.conf
+sudo sed -i "s/#quiet_mode/quiet_mode/" /etc/proxychains.conf
 
 if [ ! -f /usr/bin/p ]; then
     sudo ln -s /usr/bin/proxychains /usr/bin/p                                                         
