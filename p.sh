@@ -30,8 +30,8 @@
 ############################################################################################
  
  
-LOCAL_PROXY_IP=127.0.0.1
-LOCAL_PROXY_PORT=7071                                                                              
+LOCAL_PROXY_IP=10.1.1.1
+LOCAL_PROXY_PORT=7080                                                                              
 echo -n "Your proxy server:" && read -e proxy_server 
 echo -n "Username:" && read -e proxy_user 
 identity_file="$HOME/.ssh/id_rsa_${proxy_server}_${proxy_user}"                                    
