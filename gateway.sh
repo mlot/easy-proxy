@@ -47,9 +47,10 @@ if [ ! -f /usr/bin/p ]; then
 fi
 
 if [ ! -f /usr/bin/psh ]; then
-    #echo "proxychains bash --rcfile <(cat ~/.bashrc; echo 'PS1="(p)$PS1"')" > /usr/bin/psh
-    sudo echo 'proxychains bash --rcfile <(cat ~/.bashrc; echo PS1='"'"'(p)$PS1'"')" > /usr/bin/psh
-    sudo chmod u+x /usr/bin/psh
+    echo 'proxychains bash --rcfile <(cat ~/.bashrc; echo PS1='"'"'(p)$PS1'"')" > ~/.tmpsh
+    sudo sh -c 'cat ~/.tmpsh > /usr/bin/psh'
+    sudo chmod a+x /usr/bin/psh
+    rm -rf ~/.tmpsh
 fi
 
 echo
