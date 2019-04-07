@@ -39,7 +39,7 @@ echo
 echo "Check software installation..."
 sudo apt-get -y install proxychains  
 
-sudo sed -i "s/socks5\s127.0.0.1\s7071/socks5 $GATEWAY_IP $GATEWAY_PORT/" /etc/proxychains.conf
+sudo sed -i "s/socks4\s\s127.0.0.1\s9050/socks5 $GATEWAY_IP $GATEWAY_PORT/" /etc/proxychains.conf
 sudo sed -i "s/#quiet_mode/quiet_mode/" /etc/proxychains.conf
 
 if [ ! -f /usr/bin/p ]; then
