@@ -29,11 +29,12 @@
 #
 ############################################################################################
  
- 
 LOCAL_PROXY_IP=127.0.0.1
-LOCAL_PROXY_PORT=7071                                                                           
+LOCAL_PROXY_PORT=7071
+
 echo -n "Your proxy server:" && read -e proxy_server 
-echo -n "Username:" && read -e proxy_user 
+echo -n "Username:" && read -e proxy_user
+
 identity_file="$HOME/.ssh/id_rsa_${proxy_server}_${proxy_user}"                                    
 
 function check_passwordless_login() {
@@ -72,7 +73,7 @@ fi
 
 echo
 echo "Check software installation..."
-sudo apt-get -y install proxychains autossh  
+sudo apt install -y proxychains autossh  
 echo 'Waiting for cleaning autossh daemon...' && sudo killall -9 autossh && sleep 5
 echo 'Start autossh daemon...' 
 autossh -Nf -i $identity_file -D $LOCAL_PROXY_IP:$LOCAL_PROXY_PORT ${proxy_user}@${proxy_server}         
@@ -86,8 +87,8 @@ fi
 
 if [ ! -f /usr/bin/psh ]; then
     #echo "proxychains bash --rcfile <(cat ~/.bashrc; echo 'PS1="(p)$PS1"')" > /usr/bin/psh
-    echo 'proxychains bash --rcfile <(cat ~/.bashrc; echo PS1='"'"'(p)$PS1'"')" > /usr/bin/psh
-    sudo chmod u+x /usr/bin/psh
+    sudo sh -c "echo 'proxychains bash --rcfile <(cat ~/.bashrc; echo PS1='\"'\"'(p)\$PS1'\"')\" > /usr/bin/psh"
+    sudo chmod a+x /usr/bin/psh
 fi
 
 echo
